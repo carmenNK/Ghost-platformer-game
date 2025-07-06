@@ -1,0 +1,75 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Alle Dateien (*)",
+    "fileStates": {
+        "#Tilesetv3": {
+            "scaleInDock": 1
+        },
+        "#tilesetlevel1": {
+            "scaleInDock": 1
+        },
+        "#tilesetlevel3b": {
+            "scaleInDock": 2
+        },
+        "dungeonLv1.tmx": {
+            "scale": 1,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": 453,
+                "y": 416.5
+            }
+        },
+        "dungeonLv1.tmx#Tilesetv3": {
+            "scaleInDock": 1.5
+        },
+        "tilesetlevel1.tmj": {
+            "scale": 0.690234375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 831.6015846066781,
+                "y": 160.09054895302774
+            }
+        },
+        "tilesetlevel1.tmj#tilesetlevel1": {
+            "scaleInDock": 1
+        },
+        "tilesetlevel3.tmj": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 405.3333333333333,
+                "y": 2395.333333333333
+            }
+        },
+        "tilesetlevel3.tmj#Tilesetv3": {
+            "scaleInDock": 1.5
+        },
+        "tilesetlevel3.tmj#tilesetlevel1": {
+            "scaleInDock": 1.5
+        }
+    },
+    "last.imagePath": "C:/Users/carme/Desktop/SoSe25/MI2/Ghost/assets",
+    "map.height": 60,
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 32,
+    "map.tileWidth": 32,
+    "map.width": 25,
+    "openFiles": [
+    ],
+    "project": "design.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "tilesetlevel1.tmj"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 32
+    }
+}
