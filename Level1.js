@@ -8,6 +8,12 @@ class Level1 extends Phaser.Scene {
 
    
     create() {
+        this.sound.unlock();
+        this.sound.stopAll(); 
+        this.bgMusic = this.sound.add("bgMusic1", { loop: true, volume: 0.4 });
+        this.bgMusic.play();
+        this.jumpSound = this.sound.add("jump");
+        this.dieSound = this.sound.add("die");
         this.add.text(20, 20, "Level 1");
         const map = this.make.tilemap({ key: "level1" });
         const tileset = map.addTilesetImage("tilesetlevel1", "tiles");
@@ -93,19 +99,22 @@ class Level1 extends Phaser.Scene {
 
         if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.blocked.down) {
             this.player.setVelocityY(-400);
+            this.jumpSound.play();
         }
     }
 
     hitTrap() {
         if (this.isDying) return;
         this.isDying = true;
+
+        this.dieSound.play();
         
         this.player.setVelocityX(0);
         this.player.setVelocityY(0);
         //this.player.body.allowGravity = true; 
         this.input.keyboard.enabled = false;
 
-        this.time.delayedCall(800, () => {
+        this.time.delayedCall(200, () => {
             this.player.play("ghostDie");
 
             this.player.once("animationcomplete", () => {

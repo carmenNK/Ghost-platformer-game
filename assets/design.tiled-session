@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "tilesetlevel3b.tmj",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Alle Dateien (*)",
@@ -16,6 +16,9 @@
         },
         "#tilesetlevel3b": {
             "scaleInDock": 2
+        },
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
         },
         "dungeonLv1.tmx": {
             "scale": 1,
@@ -39,35 +42,80 @@
         "tilesetlevel1.tmj#tilesetlevel1": {
             "scaleInDock": 1
         },
-        "tilesetlevel3.tmj": {
-            "scale": 0.75,
+        "tilesetlevel2.tmj": {
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 405.3333333333333,
-                "y": 2395.333333333333
+                "x": 1345.4545454545455,
+                "y": 480.30303030303037
+            }
+        },
+        "tilesetlevel2.tmj#tilesetlevel2": {
+            "scaleInDock": 1
+        },
+        "tilesetlevel3.tmj": {
+            "expandedObjectLayers": [
+                4,
+                3
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 480.66666666666663,
+                "y": 1519.333333333333
             }
         },
         "tilesetlevel3.tmj#Tilesetv3": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "tilesetlevel3.tmj#tilesetlevel1": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1
+        },
+        "tilesetlevel3.tmj#tilesetlevel3b": {
+            "scaleInDock": 1
+        },
+        "tilesetlevel3b.tmj": {
+            "expandedObjectLayers": [
+                4,
+                3,
+                2
+            ],
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 400,
+                "y": 1345
+            }
+        },
+        "tilesetlevel3b.tmj#tilesetlevel3b": {
+            "scaleInDock": 1
+        },
+        "tilesetlevel3b.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         }
     },
     "last.imagePath": "C:/Users/carme/Desktop/SoSe25/MI2/Ghost/assets",
-    "map.height": 60,
+    "map.height": 80,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 32,
     "map.tileWidth": 32,
     "map.width": 25,
     "openFiles": [
+        "tilesetlevel3.tmj",
+        "tilesetlevel3b.tmj"
     ],
     "project": "design.tiled-project",
-    "property.type": "bool",
+    "property.type": "int",
     "recentFiles": [
+        "tilesetlevel3.tmj",
+        "tilesetlevel3b.tmj",
+        "tilesetlevel3b.tsx",
         "tilesetlevel1.tmj"
     ],
     "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 32,
         "width": 32

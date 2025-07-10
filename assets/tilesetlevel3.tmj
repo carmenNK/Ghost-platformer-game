@@ -924,6 +924,19 @@
          "tilecount":48,
          "tileheight":16,
          "tilewidth":16
+        }, 
+        {
+         "columns":4,
+         "firstgid":933,
+         "image":"tilesetlevel3b.png",
+         "imageheight":160,
+         "imagewidth":128,
+         "margin":0,
+         "name":"tilesetlevel3b",
+         "spacing":0,
+         "tilecount":20,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":16,
  "type":"map",
