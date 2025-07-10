@@ -4,7 +4,10 @@ class GameOverScene extends Phaser.Scene {
     }
 
     create() {
-        this.add.text(350, 250, "Game Over", { fontSize: "28px", fill: "#ff0000" });
+        this.sound.stopAll();
+        this.gameOver = this.sound.add("gameOver");
+        this.gameOver.play();
+        this.add.text(250, 250, "Game Over", { fontSize: "60px", fill: "#ff0000" });
         this.input.once("pointerdown", () => {
             this.scene.start("title");
         });

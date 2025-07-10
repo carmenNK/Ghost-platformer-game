@@ -63,9 +63,19 @@ class PreloadScene extends Phaser.Scene {
             percentText.destroy();
             assetText.destroy();
         });
+        //audio
+        this.load.audio("bgMusic1","assets/sounds/bg_Sound1.mp3");
+        this.load.audio("bgMusic2","assets/sounds/bg_Sound2.mp3");
+        this.load.audio("bgMusic3","assets/sounds/bg_Sound3.mp3");
+        this.load.audio("soulSteal","assets/sounds/soul.mp3");
+        this.load.audio("teleportation","assets/sounds/teleportation.mp3");
+        this.load.audio("switch","assets/sounds/lift_activation_sound.mp3");
+        this.load.audio("jump","assets/sounds/Jump_Sound_1.wav");
+        this.load.audio("die","assets/sounds/Dies_Sound_1.wav");
+        this.load.audio("gameOver","assets/sounds/gameOver.mp3");
+        
 
-
-
+        //image
         this.load.image("bg", "assets/bg.jpg");
         this.load.image("logo1", "assets/GhostLogo.png");
         this.load.image("logo", "assets/logo.png");
@@ -77,11 +87,14 @@ class PreloadScene extends Phaser.Scene {
         this.load.image("tiles3", "assets/Tilesetv3.png");
         this.load.image("tiles", "assets/tilesetlevel1.png");
         this.load.image("tiles2", "assets/tilesetlevel2.png");
+        this.load.image("tiles3b", "assets/tilesetlevel3b.png");
         this.load.image("portal", "assets/portal1.png");
         this.load.image("lift", "assets/lift.png");
+        this.load.image("deadLift", "assets/deadLift.png");
         this.load.tilemapTiledJSON("level1", "assets/tilesetlevel1.tmj");
         this.load.tilemapTiledJSON("level2", "assets/tilesetlevel2.tmj");
-        this.load.tilemapTiledJSON("level3", "assets/tilesetlevel3.tmj");
+        this.load.tilemapTiledJSON("level3b", "assets/tilesetlevel3.tmj");
+        this.load.tilemapTiledJSON("level3", "assets/tilesetlevel3b.tmj");
         this.load.spritesheet("soul", "assets/fire.png", {
             frameWidth: 32,
             frameHeight: 32
@@ -93,6 +106,10 @@ class PreloadScene extends Phaser.Scene {
         this.load.spritesheet("ghost", "assets/ghost.png", {
             frameWidth: 32,
             frameHeight: 32
+        });
+        this.load.spritesheet("enemy", "assets/enemy.png", {
+            frameWidth: 64,
+            frameHeight: 64
         });
         this.load.spritesheet("portalAnim", "assets/teleportal1.png", {
             frameWidth: 64,
@@ -123,6 +140,16 @@ class PreloadScene extends Phaser.Scene {
                 frames: this.anims.generateFrameNumbers("ghost", { start: 12, end: 25 }),
                 frameRate: 15,
                 repeat: 0
+            });
+        }
+
+        //Ennemy animation
+        if (!this.anims.exists("enemyWalk")){
+            this.anims.create({
+                key: "enemyWalk",
+                frames: this.anims.generateFrameNumbers("enemy", { start: 0, end: 1 }),
+                frameRate: 6,
+                repeat: -1
             });
         }
 

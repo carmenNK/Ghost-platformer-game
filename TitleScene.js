@@ -4,6 +4,15 @@ class TitleScene extends Phaser.Scene {
     }
 
     create() {
+        this.sound.unlock();
+        this.bgMusic = this.sound.add("bgMusic2", {
+            loop: true,
+            volume: 0.5
+        });
+
+        this.input.once("pointerdown", () => {
+            this.bgMusic.play(); 
+        });
         this.add.image(400, 300, "bgMenu").setDisplaySize(800, 600);
         this.add.image(400, 200, "logo").setScale(1.5);
 

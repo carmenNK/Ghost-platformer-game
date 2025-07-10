@@ -1,3 +1,8 @@
+// collect soul
+window.GameState = {
+    soulAmmo: 0 
+};
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -8,9 +13,10 @@ const config = {
     physics: {
         default: "arcade",
         arcade: {
-            gravity: { y: 500 }, 
+            gravity: { y: 500 },
+            debug: false // désactive le mode debug, active-le si besoin
         }
-    },
+    }
 };
 
 const game = new Phaser.Game(config);

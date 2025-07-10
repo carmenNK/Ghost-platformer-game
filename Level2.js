@@ -5,7 +5,14 @@ class Level2 extends Phaser.Scene {
     }
 
     create() {
-        
+        this.sound.unlock();
+        this.sound.stopAll(); // Coupe la musique du menu
+        this.bgMusic = this.sound.add("bgMusic2", { loop: true, volume: 0.4 });
+        this.bgMusic.play();
+        this.jumpSound = this.sound.add("jump");
+        this.dieSound = this.sound.add("die");
+        this.soulSteal = this.sound.add("soulSteal");
+        this.teleportSound = this.sound.add("teleportation");
         this.isDying = false;
         this.score = 0;
         this.canTeleport = true;
@@ -75,25 +82,6 @@ class Level2 extends Phaser.Scene {
             }
         });
 
-        //Teleportation portal
-      /*  layer.forEachTile(tile => {
-            if (tile.properties.teleport) {
-                const x = tile.pixelX + tile.width / 2;
-                const y = tile.pixelY + tile.height / 2;
-
-                const zone = this.teleportZones.create(x, y)
-                    .setSize(32, 32)
-                    .setVisible(false)
-                    .setOrigin(0.5);
-
-                zone.destX = tile.properties.destX;
-                zone.destY = tile.properties.destY;
-
-                zone.refreshBody();
-            }
-        });
-        this.teleportZones = this.physics.add.staticGroup();
-        this.physics.add.overlap(this.player, this.teleportZones, this.teleportPlayer, null, this);*/
         this.teleportZones = this.physics.add.staticGroup();
 
         const portalObjects = map.getObjectLayer("portals").objects;
@@ -146,10 +134,12 @@ class Level2 extends Phaser.Scene {
 
         if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.blocked.down) {
             this.player.setVelocityY(-400);
+            this.jumpSound.play();
         }
     }
 
     collectSoul(player, soul) {
+        this.soulSteal.play();
         soul.disableBody(true, true);
         this.souls.remove(soul, true, true);
         this.score += 1;
@@ -166,6 +156,7 @@ class Level2 extends Phaser.Scene {
 
         this.canTeleport = false; 
 
+        this.teleportSound.play();
         this.cameras.main.fadeOut(300);
 
         this.time.delayedCall(300, () => {
@@ -182,11 +173,11 @@ class Level2 extends Phaser.Scene {
     hitTrap() {
         if (this.isDying) return;
         this.isDying = true;
-
+        this.dieSound.play();
         this.player.setVelocity(0);
         this.input.keyboard.enabled = false;
 
-        this.time.delayedCall(800, () => {
+        this.time.delayedCall(200, () => {
             this.player.play("ghostDie");
 
             this.player.once("animationcomplete", () => {
